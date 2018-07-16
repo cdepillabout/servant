@@ -154,8 +154,8 @@ performRequest req = do
       let status = Client.responseStatus response
           status_code = statusCode status
           ourResponse = clientResponseToResponse response
-      unless (status_code >= 200 && status_code < 300) $
-        throwError $ FailureResponse ourResponse
+      -- unless (status_code >= 200 && status_code < 300) $
+      --   throwError $ FailureResponse ourResponse
       return ourResponse
 
 performStreamingRequest :: Request -> ClientM StreamingResponse
